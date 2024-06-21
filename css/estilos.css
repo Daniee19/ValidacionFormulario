@@ -1,0 +1,180 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    /*background-color: #E5E5E5;*/
+    background-color: #E5E5E5;
+}
+
+main {
+    max-width: 800px;
+    width: 90%;
+    margin: auto;
+    padding: 40px;
+}
+
+.formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.formulario__label {
+    display: block;
+    /*Para que abarque el 100%*/
+    font-weight: 700;
+    /*Para que se vea más negrita*/
+    padding: 10px;
+    cursor: pointer;
+}
+
+.formulario__grupo_input {
+    position: relative;
+}
+
+.formulario__input {
+    width: 100%;
+    background: #fff;
+    border: 3px solid transparent;
+    border-radius: 3px;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 40px 0 10px;
+    transition: .3s ease all;
+    /*Una propiedad ease para todas las propiedades*/
+}
+
+/*Cuando se de un clic al input*/
+.formulario__input:focus {
+    /*Queremos hacer que cuando se de clic en el input
+    haya una transicion del color para detectar que se selecciono ese campo*/
+    border: 3px solid #0075ff;
+    outline: none;
+    box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+}
+
+/*Cuando se escribe mal en el input se mostrará un texto OFF*/
+.formulario__input_error {
+    font-size: 12px;
+    margin-bottom: 0;
+    display: none;
+}
+
+/*Cuando se escribe mal en el input se mostrará un texto ON*/
+.formulario__input_error_activo {
+    display: block;
+}
+/*BOTON COLOR NEGRO - ANTES QUE NADA*/
+.formulario__validacion_estado {
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    z-index: 100;
+    font-size: 16px;
+    opacity: 0;
+}
+
+/*Checkbox*/
+.formulario__checkbox {
+    margin-right: 10px;
+}
+
+.formulario__grupo_terminos,
+.formulario__mensaje,
+.formulario__grupo_btn_enviar {
+    /*Juntar 2 columnas en una sola*/
+    /*Que estos divs abarquen 2 columnas*/
+    grid-column: span 2;
+}
+
+.formulario__mensaje {
+    height: 45px;
+    line-height: 45px;
+    background: #F66868;
+    padding: 0 15px;
+    border-radius: 3px;
+    display: none;
+}
+
+.formulario__mensaje_activo {
+    display: block;
+}
+
+.formulario__mensaje p {
+    margin: 0px;
+}
+
+.formulario__grupo_btn_enviar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*Dar estilos al boton y al texto de exito*/
+.formulario__btn {
+    height: 45px;
+    line-height: 45px;
+    width: 30%;
+    background: #000;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .1s ease all;
+}
+
+.formulario__btn:hover {
+    box-shadow: 3px 0px 30px rgba(163, 163, 163, 1);
+}
+
+.formulario__mensaje_exito {
+    font-size: 14px;
+    color: #119200;
+    display: none;
+}
+
+.formulario__mensaje_exito_activo {
+    display: block;
+}
+
+/**Estilos para validación**/
+.formulario__grupo_correcto .formulario__validacion_estado {
+    color: #1ed12d;
+    opacity: 1;
+}
+
+.formulario__grupo_incorrecto .formulario__label {
+    color: #bb2929;
+}
+
+/*Boton rojo*/
+.formulario__grupo_incorrecto .formulario__validacion_estado {
+    color: #bb2929;
+    opacity: 1;
+}
+
+.formulario__grupo_incorrecto .formulario__input {
+    border: 3px solid #bb2929;
+}
+
+/*Mediaqueries (44:10)*/
+@media screen and (max-width: 800px) {
+    .formulario {
+        grid-template-columns: 1fr;
+    }
+
+    .formulario__grupo_terminos,
+    .formulario__mensaje,
+    .formulario__grupo_btn_enviar {
+        /*Juntar 2 columnas en una sola*/
+        /*Que estos divs abarquen 2 columnas*/
+        grid-column: span 1;
+    }
+
+    .formulario__btn {
+        width: 100%;
+    }
+}

@@ -1,0 +1,120 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de Formulario con Javascript</title>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/estilos.css" />
+    <link rel="icon" type="img/png" href="img/globo.png">
+</head>
+
+<body>
+    <main>
+        <!-- Etiqueta formulario-->
+        <form action="" class="formulario" id="formulario">
+            <!--En el grupo: Cada input de texto va a estar formada por el input, el nombre 
+            del input, el iconito de verificacion y el mensajito de error-->
+            <!--Grupo: Usuario-->
+            <div class="formulario__grupo" id="grupo__usuario">
+                <!-- Cuando seleccionan el label se va a activar ese textfield especifico-->
+                <label for="usuario" class="formulario__label">Usuario</label>
+                <div class="formulario__grupo_input">
+                    <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="jhon123">
+                    <!--Al comienzo va a estar por defecto la X pero con opacidad 0, y luego al agregar la lista, simplemente 
+                    se reemplazaría, pero ahora con su respectivo color rojo, esto por la agregación de incorrecto en formulario__grupo-->
+                    <i class="formulario__validacion_estado fa fa-times-circle"></i>
+                </div>
+                <p class="formulario__input_error">El usuario tiene que ser de 4 a 16 digitos y solo pude contener
+                    numeros, letras o guión bajo</p>
+            </div>
+            <!--Fin del Usuario-->
+            <!--Grupo: Nombre-->
+            <div class="formulario__grupo" id="grupo__nombre">
+                <!-- Cuando seleccionan el label se va poner el borde de seleccion-->
+                <label for="nombre" class="formulario__label">Nombre</label>
+                <div class="formulario__grupo_input">
+                    <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="John Doe">
+                    <i class="formulario__validacion_estado fa fa-times-circle"></i>
+                </div>
+                <p class="formulario__input_error">El nombre tiene que ser de 4 a 16 digitos y solo pude contener
+                    numeros, letras o guión bajo</p>
+            </div>
+            <!--Fin del Nombre-->
+            <!--Grupo: Contraseña-->
+            <div class="formulario__grupo" id="grupo__contrasena">
+                <!-- Cuando seleccionan el label se va poner el borde de seleccion-->
+                <label for="contrasena" class="formulario__label">Contraseña</label>
+                <div class="formulario__grupo_input">
+                    <input type="password" class="formulario__input" name="contrasena" id="contrasena">
+                    <i class="formulario__validacion_estado fa fa-times-circle"></i>
+                </div>
+                <p class="formulario__input_error">La contraseña tiene que ser de 8 a 16 digitos </p>
+            </div>
+            <!--Fin de la Contraseña-->
+            <!--Grupo: Contraseña2-->
+            <div class="formulario__grupo" id="grupo__contrasena2">
+                <!-- Cuando seleccionan el label se va poner el borde de seleccion-->
+                <label for="contrasena2" class="formulario__label">Repetir Contraseña</label>
+                <div class="formulario__grupo_input">
+                    <input type="password" class="formulario__input" name="contrasena2" id="contrasena2">
+                    <i class="formulario__validacion_estado fa fa-times-circle"></i>
+                </div>
+                <p class="formulario__input_error">Ambas contraseñas deben ser iguales</p>
+            </div>
+            <!--Fin de la Contraseña2-->
+            <!--Grupo: Correo Electronico-->
+            <div class="formulario__grupo" id="grupo__correo">
+                <!-- Cuando seleccionan el label se va poner el borde de seleccion-->
+                <label for="correo" class="formulario__label">Correo Electrónico</label>
+                <div class="formulario__grupo_input">
+                    <input type="email" class="formulario__input" name="correo" id="correo"
+                        placeholder="alguien@example.com">
+                    <i class="formulario__validacion_estado fa fa-times-circle"></i>
+                </div>
+                <p class="formulario__input_error">El correo solo pude contener
+                    numeros, letras, puntos, guiones o guión bajo</p>
+            </div>
+            <!--Fin del Correo Electronico-->
+            <!--Grupo: Telefono-->
+            <div class="formulario__grupo" id="grupo__telefono">
+                <!-- Cuando seleccionan el label se va poner el borde de seleccion-->
+                <label for="telefono" class="formulario__label">Teléfono</label>
+                <div class="formulario__grupo_input">
+                    <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="938482912">
+                    <i class="formulario__validacion_estado fa fa-times-circle"></i>
+                </div>
+                <p class="formulario__input_error">El teléfono solo pude contener
+                    numeros, y tiene un máximo de 9 dígitos</p>
+            </div>
+            <!--Fin del Correo Electronico-->
+            <!--Grupo de terminos y condiciones-->
+            <div class="formulario__grupo" id="grupo__terminos">
+                <!-- El input permite brindar una mayor accesibilidad, ya que configura el input como un for para relacionarlo con el texto.-->
+                <label class="formulario__label">
+                    <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
+                    Acepto los terminos y condiciones
+                </label>
+            </div>
+            <div class="formulario__mensaje" id="formulario__mensaje">
+                <p><i class="fa-solid fa-triangle-exclamation"></i><b> Error:</b> Por favor, rellene correctamente el
+                    formulario</p>
+            </div>
+            <div class="formulario__grupo formulario__grupo_btn_enviar">
+                <button type="submit" class="formulario__btn">Enviar</button>
+                <p class="formulario__mensaje_exito" id="formulario__mensaje_exito">Formulario enviado exitosamente</p>
+            </div>
+            
+        </form>
+    </main>
+    <script src="js/formulario.js"></script>
+    <script src="https://kit.fontawesome.com/c353473263.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+<!--22:55 dar vida al proyecto usando css | Video de como realizar el formulario-->
+<!-- 37:58 Añadir una validación a la segunda contraseña | Video 2-->
+ <!--44:18 Verificar que se hayan llenado todos los campos de texto, pass, o email | Video 2-->
+ <!-- 51:28 Terminos y condiciones | Video 2 -->
